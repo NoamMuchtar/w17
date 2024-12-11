@@ -1,0 +1,24 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.my-image {
+  width: 400px;
+}
+.navLink {
+  color: #222;
+  margin-left: 10px;
+}
+.navLink:hover {
+  font-weight: bold;
+  color: #222;
+}
+.fa-brands {
+  font-size: 22px;
+  margin-left: 10px;
+}
