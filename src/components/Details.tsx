@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
 interface DetailsProps {}
 
@@ -6,8 +6,28 @@ const Details: FunctionComponent<DetailsProps> = () => {
   //   function handleInput(newInput: string) {
   //     console.log(newInput);
   //   }
+  const handleInput = (newValue: string): void => {
+    console.log(newValue);
+    setName(newValue);
+  };
+  const [name, setName] = useState("");
+  let counter: number = 1;
 
-  const handleInput = (newValue: string) => console.log(newValue);
+  useEffect(() => {
+    console.log("Details component was redered!");
+  });
+
+  useEffect(() => {
+    console.log("Details component was renderd first time");
+  }, []);
+
+  useEffect(() => {
+    console.log("Name was changed");
+  }, [name]);
+
+  useEffect(() => {
+    setName("new Name");
+  }, [name])
 
   return (
     <>
@@ -17,6 +37,16 @@ const Details: FunctionComponent<DetailsProps> = () => {
         id="userName"
         onChange={(e) => handleInput(e.target.value)}
       />
+      <p>{name}</p>
+      <button
+        className="btn btn-primary"
+        onClick={() => {
+          counter = counter + 1;
+          console.log(counter);
+        }}
+      >
+        +
+      </button>
     </>
   );
 };

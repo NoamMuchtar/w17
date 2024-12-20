@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
+import Todos from "./components/Todos";
+import Users from "./components/Users";
 import Wellcome1 from "./components/Wellcome1";
 import Wellcome2 from "./components/Wellcome2";
 import Wellcome3 from "./components/Wellcome3";
@@ -15,6 +17,8 @@ function App() {
   let num: number = 10;
   return (
     <>
+      <Users />
+      <Todos />
       <Wellcome1 isAdmin={false} />
       <Wellcome2 isAdmin={false} />
       <Wellcome3 isAdmin={false} />

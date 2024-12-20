@@ -35,7 +35,12 @@ const Products: FunctionComponent<ProductsProps> = () => {
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
               <h6 className="card-subtitle mb-2 text-muted">{product.price}</h6>
-              <button className="btn btn-success">More info</button>
+              <button
+                className="btn btn-success"
+                onClick={() => alert(product.name)}
+              >
+                More info
+              </button>
             </div>
           </div>
         ))

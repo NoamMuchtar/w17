@@ -16,4 +16,5 @@ const Wellcome3: FunctionComponent<Wellcome3Props> = ({ isAdmin }) => {
   );
 };
 
+
 export default Wellcome3;
