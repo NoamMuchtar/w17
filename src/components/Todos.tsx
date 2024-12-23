@@ -9,7 +9,7 @@ const Todos: FunctionComponent<TodosProps> = () => {
     <>
       <h1>Todos</h1>
       {todos.length ? (
-        todos.map((todo) => <p key={todo.id}>{todo.title}</p>)
+        todos.map((todo: any) => <p key={todo.id}>{todo.title}</p>)
       ) : (
         <p>No Todos Found!</p>
       )}
