@@ -1,23 +1,22 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
+import { getAllUsers, getUserById } from "../services/userService";
 
 interface UserDetailsProps {}
 
 const UserDetails: FunctionComponent<UserDetailsProps> = () => {
-  let { id } = useParams();
+  let { id }: any = useParams();
   let [user, setUser] = useState<any>([]);
   let [users, setUsers] = useState<any>([]);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then((response) => response.json())
-      .then((user) => setUser(user))
+    getUserById(id)
+      .then((res) => setUser(res.data))
       .catch((err) => console.log(err));
 
-    fetch("https://jsonplaceholder.typicode.com/users/")
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
+    getAllUsers()
+      .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
 

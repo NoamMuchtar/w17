@@ -8,6 +8,9 @@ import Todos from "./components/Todos";
 import Users from "./components/Users";
 import NotFound from "./components/NotFound";
 import UserDetails from "./components/UserDetails";
+import TopSeries from "./components/TopSeries";
+import SeriesDetails from "./components/SeriesDetails";
+import Register from "./components/register";
 function App() {
   return (
     <>
@@ -17,8 +20,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/todos" element={<Todos />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/:id" element={<UserDetails />} />
+
+          <Route path="/users">
+            <Route index element={<Users />} />
+            <Route path=":id" element={<UserDetails />} />
+          </Route>
+          <Route path="/series">
+            <Route index element={<TopSeries />} />
+            <Route path=":name" element={<SeriesDetails />} />
+          </Route>
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

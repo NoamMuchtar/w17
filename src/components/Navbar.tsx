@@ -18,6 +18,9 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
       <NavLink className="mx-1" to="/todos">
         Todos
       </NavLink>
+      <NavLink className="mx-1" to="/series">
+        Top Series
+      </NavLink>
     </>
   );
 };
