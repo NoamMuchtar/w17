@@ -10,7 +10,8 @@ import NotFound from "./components/NotFound";
 import UserDetails from "./components/UserDetails";
 import TopSeries from "./components/TopSeries";
 import SeriesDetails from "./components/SeriesDetails";
-import Register from "./components/register";
+import Register from "./components/Register";
+import Login from "./components/Login";
 function App() {
   return (
     <>
@@ -25,11 +26,13 @@ function App() {
             <Route index element={<Users />} />
             <Route path=":id" element={<UserDetails />} />
           </Route>
+
           <Route path="/series">
             <Route index element={<TopSeries />} />
             <Route path=":name" element={<SeriesDetails />} />
           </Route>
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

@@ -27,7 +27,7 @@ const Details: FunctionComponent<DetailsProps> = () => {
 
   useEffect(() => {
     setName("new Name");
-  }, [name])
+  }, [name]);
 
   return (
     <>
